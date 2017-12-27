@@ -1,7 +1,11 @@
 'use strict'
-
-function sort(input) {
-  return input.sort((a,b) => a-b); // Remove this line and change to your own algorithm
+function sortlist(input){
+	input.sort(function(a,b) {
+		if (a < b){ return -1;}
+		if (a > b){ return 1;}
+		return 0;// Remove this line and change to your own algorithm
+	});
+	return input;
 }
 
-module.exports = sort
+module.exports = sortlist
