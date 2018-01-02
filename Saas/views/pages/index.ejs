@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MWS Home page</title>
+	<meta charset=utf-8>
+	<meta name="author" content="tuananh">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  	<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+  	<script src="simpleCart.js"></script>
+	<script>
+		simpleCart({
+			checkout: { 
+				type: "PayPal" , 
+				email: "twolfdota@gmail.com" 
+			}
+		});	
+	</script>
+
+</head>
+<body style="background:url(Content/images/background.jpg); background-size:100% 100%;">
+<div id="id01" class="modal col-xs-12 col-sm-12">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="signupcontainer">
+    	<p style="font-size:16px; font-style:italic">Sign up now for better customer support and discount events!</p>
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      
+      <p>By creating an account you agree to our <a href="Introduction.html#term" target="_blank">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- login -->
+<div id="id02" class="modal col-xs-12 col-sm-12">
+  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content animate" action="/action_page.php">
+    
+
+    <div class="logincontainer">
+    	<h4>Please login for more extraordinary features!</h4>
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      
+      <input type="checkbox" checked="checked"> Remember me
+    
+
+    <div class="clearfix" style="">
+      <button type="submit" class="loginbtn">Login</button>
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+      <br/>
+      <a onclick="document.getElementById('id01').style.display='inline-block' ; document.getElementById('id02').style.display='none'">Haven't got account yet? Sign up now!</a>
+    </div>
+  	</div>  
+  </form>
+</div>
+	<header class="" style="background:url(images/logo-01.png) left center no-repeat; background-size: 120px 120px; background-position: 1% 18%; min-height: 400px; position: relative;">
+		<% include ../partials/header %>
+		<div class="slogan col-xs-6 col-sm-4 col-md-3" style="margin-left: 130px; ">
+  		<h1 style="font-family:trebuchet MS; font-size: 35px;font-weight:bolder">MWS</h1>
+  		<p style="font-size:18px">High-end gaming gear!</p> 
+  		</div>
+  		
+            <div class="search col-xs-11 col-sm-11 col-md-3"> 
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="Search products..." >
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                </div>
+            </div>
+        <div class="accountcart col-xs-11 col-sm-11 col-md-2" style="float:right; text-align: right">
+        	<button onclick="document.getElementById('id02').style.display='inline-block'" style="width: 65px;">Log in</button>
+        	<button onclick="document.getElementById('id01').style.display='inline-block'">Sign Up</button>
+			<br/>
+        	<button onclick="window.location='cart.html'" style=""><span class="glyphicon glyphicon-shopping-cart"> </span> View cart</button>
+ 	    </div>
+	</header>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:100%;height:320px;margin:-240px 0px 15px 0px;clear:both;">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="images/banner-keyboard.jpg" style="height:320px; width: 100%">
+      <div class="carousel-caption">
+        <p>Extremely good deals with keyboards this july!</p>
+        <a href="keyboards.html">Check out now!</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="images/banner-support.jpg" alt="support" style="height:320px; width: 100%">
+      <div class="carousel-caption">
+        <p><a onclick="document.getElementById('id01').style.display='inline-block'"">Sign Up</a> now for better customer support!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="images/banner-vga.jpg" alt="vga" style="height:320px; width: 100%">
+      <div class="carousel-caption">
+        
+        <p>Have you optimized your gaming PC yet?</p>
+        <a href="Full-case.html">Do it now!</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+	
+	
+<div id="main" class="container-fluid" style="background:url(images/background.jpg); background-size:100% 100%;"">
+	<div id="intro" style="width:100%">
+		<ul>
+			<li style="background:url(images/support.png) no-repeat; background-size: 25px 25px; background-position:0% 20%; padding: 0px 0px 0px 28px">24/7 support</li>
+			<li style="background:url(images/freeship.png) no-repeat; background-size: 25px 25px; background-position:0% 20%; padding: 0px 0px 0px 28px">Free Shipping</li>
+			<li style="background:url(images/in-time.png) no-repeat; background-size: 25px 25px; background-position:0% 20%; padding: 0px 0px 0px 28px">In-time delivery</li>
+			<li style="background:url(images/mobile.png) no-repeat; background-size: 25px 25px; background-position:0% 20%; padding: 0px 0px 0px 28px">Hot-line: 01678526202</li>
+		</ul>
+	</div>
+
+	<div id="container">
+	<div class="row">
+		<div id="leftside" class="col-xs-12 col-sm-3 col-md-2">
+			<div class="categoriesarea">
+				<center><h3>Product Categories</h3></center>
+				<ul>
+					<li class="odd"><a href="Mouse.html">Mouse</a></li>
+					<li class="even"><a href="Keyboards.html">Keyboards</a></li>
+					<li class="odd"><a href="Headphones.html">Headphones</a></li>
+					<li class="even"><a href="Full-case.html">Full-case</a></li>
+					<li class="odd"><a href="VGA.html">VGA</a></li>
+					<li class="even"><a href="Newest.html">Newest</a></li>
+					<li class="odd"><a href="Best-selling.html">Best-selling</a></li>
+					<li class="even"><a href="On-sale.html">On-sale</a></li>
+					
+				</ul>
+			</div>
+			<center><h3>Social contacts</h3></center>
+			<div id="socialcontact" style="text-align: center; border:1px solid black; border-top:0px; margin-top: -11px; margin-bottom: 30px">
+				
+				<a href="https://www.facebook.com/tuan.anh.188478" target="_blank"><img src="images/facebook.png" style="width:50px; height:50px; margin: 5px 10px"></a>
+				<a href="https://www.instagram.com/twolfdota/" target="_blank"><img src="images/instagram.jpg" style="width:50px; height:50px; margin: 5px 10px"></a>
+				<a href="https://www.youtube.com/channel/UCPLp11WFmB_K9y8VMaVUQhw" target="_blank"><img src="images/Youtube.ico" style="width:50px; height:50px; margin: 5px 10px"></a>
+			</div>
+			<center><a href="https://www.facebook.com/ultrafitnesscenter/" target="_blank"><img src="images/left-ad.jpg" width="90%" height="auto"></a></center>
+		</div>
+		<div id="center" class="col-xs-12 col-sm-6 col-md-8">
+			<table>
+				<tr>
+					<td class="firstcell"><a href="Newest.html" style=""><h3>Newest products</h3></a></td>
+					<td class="secondcell"><span>Sort by</span>
+						<select name="sort">
+							<option value="newest">newest</option>
+							<option value="lowering price">lowering price</option>
+							<option value="date">date</option>
+							<option value="alphabetic characters">alphabetic characters</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<div class="product simpleCart_shelfItem col-xs-12 col-sm-6 col-md-3">
+				<a href="Case-i7-950.html"><center><img class="item_thumb" src="http://nghiemhaipc.com/wp-content/uploads/2017/04/3-458x458.jpeg" style="width:100%; height:auto"></center>
+				<center><h4 class="item_name" style="font-weight:bolder">Case i7 2600 – VGA GTX 950 OC 2Gb Ddr5</h4></center>
+				<center><p style="opacity:0.6">NOT RATED</p></center>
+				<center><h4 class="item_price" style="font-weight:bolder;font-style:italic">$600</h4></center>
+				</a>
+				<a class="item_add" href="javascript:;" onclick="alert('Item added!')"><center><button>ADD TO CART</button></center></a>
+			</div>
+
+			<table>
+				<tr>
+					<td class="firstcell"><a href="Best-selling.html" style=""><h3>Best-selling</h3></a></td>
+					<td class="secondcell"><span>Sort by</span>
+						<select name="sort">
+							<option value="newest">newest</option>
+							<option value="lowering price">lowering price</option>
+							<option value="date">date</option>
+							<option value="alphabetic characters">alphabetic characters</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<div class="product simpleCart_shelfItem col-xs-12 col-sm-6 col-md-3">
+				<a href="fuhlen-sm680r.html"><center><img class="item_thumb" src="http://nghiemhaipc.com/wp-content/uploads/2017/03/fulhen-Sm680r-300x300.jpg" style="width:100%; height:auto"></center>
+				<center><h4 class="item_name" style="font-weight:bolder">Fuhlen SM680R – Led RGB M.keyboard</h4></center>
+				<center><p style="opacity:0.6">NOT RATED</p></center>
+				<center><span style="font-weight:bolder;font-style:italic;text-decoration:line-through;">$45 </span><span class="item_price" style="font-weight:bolder;color:red;font-size:18px;font-style:italic">$31</span></center>
+				</a>
+				<a class="item_add" href="javascript:;" onclick="alert('Item added!')"><center><button>ADD TO CART</button></center></a>
+			</div>
+
+			<table>
+				<tr>
+					<td class="firstcell"><a href="On-sale.html" style=""><h3>On-sale!!</h3></a></td>
+					<td class="secondcell"><span>Sort by</span>
+						<select name="sort">
+							<option value="newest">newest</option>
+							<option value="lowering price">lowering price</option>
+							<option value="date">date</option>
+							<option value="alphabetic characters">alphabetic characters</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<div class="product simpleCart_shelfItem col-xs-12 col-sm-6 col-md-3">
+				<a href="fuhlen-sm680r.html"><center><img class="item_thumb" src="http://nghiemhaipc.com/wp-content/uploads/2017/03/fulhen-Sm680r-300x300.jpg" style="width:100%; height:auto"></center>
+				<center><h4 class="item_name" style="font-weight:bolder">Fuhlen SM680R – Led RGB M.keyboard</h4></center>
+				<center><p style="opacity:0.6">NOT RATED</p></center>
+
+				<center><span style="font-weight:bolder;font-style:italic;text-decoration:line-through;">$45</span><span  class="item_price" style="font-weight:bolder;color:red;font-size:18px;font-style:italic">$31</span></center>
+				</a>
+				<a class="item_add" href="javascript:;" onclick="alert('Item added!')"><center><button>ADD TO CART</button></center></a>
+			</div>
+			<div class="product simpleCart_shelfItem col-xs-12 col-sm-6 col-md-3">
+				<a href="MZ-19.html"><center><img class="item_thumb" src="http://nghiemhaipc.com/wp-content/uploads/2017/04/mz-19.%C4%91en-458x458.jpg" style="width:100%; height:auto"></center>
+				<center><h4 class="item_name" style="font-weight:bolder">MZ-19 High quality Gaming mouse</h4></center>
+				<center><p style="opacity:0.6">NOT RATED</p></center>
+				<center><span style="font-weight:bolder;font-style:italic;text-decoration:line-through;">%30</span><span class="item_price" style="font-weight:bolder;color:red;font-size:18px;font-style:italic">$19</span></center>
+				</a>
+				<a class="item_add" href="javascript:;" onclick="alert('Item added!')"><center><button>ADD TO CART</button></center></a>
+			</div>
+			
+		</div>
+		<div id="rightside" class="col-xs-12 col-sm-3 col-md-2">
+			<center><h3>Why choose us?</h3></center>
+			<div id="why" style="text-align:justify; border:1px solid black; border-top:0px; margin-top:-11px; padding: 20px 10px">
+				<center><img src="images/introduction.jpg" style="width:90%; height:auto"></center>
+				<p>Maecenas dapibus ligula erat, ut bibendum augue pharetra id. Maecenas eget libero nibh. Fusce felis mauris, rutrum eu sapien eu, rutrum rhoncus nunc. Nunc facilisis luctus ex...</p>
+				<a href="introduction.html#intro" style="float:right">Read more</a>
+			</div>
+			<center><h2 style="font-weight:bolder; font-color:grey">Our partners</h2></center>
+			<div id="partners" style="text-align:center; margin-bottom: 20px">
+				<a href="https://vn.msi.com/" target="_blank"><img src="images/msi.jpg" style="width:40px;height:40px;margin: 5px 5px"></a>
+				<a href="http://www.nvidia.com" target="_blank"><img src="images/nvdia.png" style="width:40px;height:40px;margin: 5px 5px"></a>
+				<a href="https://www.asus.com/" target="_blank"><img src="images/asus.gif" style="width:40px;height:40px;margin: 5px 5px"></a>
+				<a href="https://www.dell.com" target="_blank"><img src="images/dell.jpg" style="width:40px;height:40px;margin: 5px 5px"></a>
+			</div>
+			<center><a href="http://olabout.wiley.com/WileyCDA/Section/id-397512.html" target="_blank"><img src="images/right-ad.jpg" width="90%" height="auto"></a></center>
+		</div>
+		
+	</div>
+</div>
+		
+</div>
+
+<div id="footer" style="margin-bottom:0px; background: linear-gradient(to top, #202020 0%, #808080 100%);height:660px; padding:0px">
+	 <ul class="nav nav-tabs">
+    	<li class="active"><a data-toggle="tab" href="#hanoi">Hanoi</a></li>
+    	<li><a data-toggle="tab" href="#hcm">HCM City</a></li>
+  	</ul>
+
+  <div class="tab-content">
+    <div id="hanoi" class="tab-pane fade in active">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.889178358931!2d105.8114963148272!3d20.997078994235206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac90fac6af8d%3A0xcb65d590be9e81e9!2zNDEgS2jGsMahbmcgxJDDrG5oLCBUaMaw4bujbmcgxJDDrG5oLCBUaGFuaCBYdcOibiwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1498224820304" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div id="hcm" class="tab-pane fade">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3457456512115!2d106.69699631472943!3d10.784809261988128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f35f204b509%3A0xe215894ba1e3c5f4!2zMzEgTeG6oWMgxJDEqW5oIENoaSwgxJBhIEthbywgUXXhuq1uIDEsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1498228080953" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    </div>
+	
+	<div id="address" class="col-xs-12 col-sm-6 col-md-9">
+		<h3>MWS Company</h3>
+		<p>Hanoi: 41 Khuong Dinh, Thanh Xuan.</p>
+		<p>HCM City: 31 Mac Dinh Chi, Da Kao, Q7.</p>
+		<p>Email:TwolfdotA@gmail.com.</p>
+	</div>
+	<div id="footer-nav" class="col-xs-12 col-sm-6 col-md-3">
+		
+		<a href="Home.html">Home</a>
+		<a href="Sitemap.html">Sitemap</a>
+		<a href="Introduction.html">About</a>
+		<a href="RSS.html">RSS</a>
+	</div>
+
+	<a class="go-top" href="#"> </a>
+</div>
+<footer>
+<% include ../partials/footer %>
+</footer>
+</body>
+</html>
+
+
+<style>
+
+.search{
+	
+	margin-left: 5%;
+	margin-top:100px;
+
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+#id01 input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+ #id01 button {
+    
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0px;
+    border: none;
+    cursor: pointer;
+    width: 49%;
+    
+}
+
+/* Extra styles for the cancel button */
+ .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+ .cancelbtn {
+	background-color:red;
+	float:left;
+}
+
+ .signupbtn {
+    background-color: #4CAF50;
+    float:right;
+}
+
+/* Add padding to container elements */
+.signupcontainer {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100;/* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+ .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+
+ .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+ .close:hover,
+ .close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
+
+@media screen and (max-width:768px) {
+	#main #intro ul li {
+		width:80%;
+		display:block;
+	}
+
+}
+
+@media screen and (max-width:600px) {
+
+	#copyright {
+		background-color:#202020;
+		padding-top:15px;
+	}
+	#center h3 {
+		font-size:15px;
+	}
+	#center select {
+		width:60%;
+	}
+	#container #leftside .categoriesarea ul {
+		width:100%;
+	}
+}
+
+#id02 input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.logincontainer {
+	padding:16px;
+}
+ #id02 button {
+    
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0px;
+    border: none;
+    cursor: pointer;
+    width: 49%;
+    
+}
+
+ .loginbtn {
+    background-color: #4CAF50;
+    float:right;
+}
+#id02 .clearfix a:hover {
+	cursor:pointer;
+}
+.accountcart button{
+	padding: 5px;
+	margin: 4% 8% 6% 4%;
+	
+}
+#main {
+	border-top:1.5px solid #D3D3D3;
+}
+#intro ul {
+	list-style-type:none;
+	width: 100%;
+}
+#intro ul li {
+	display:inline-block;
+	width:24.5%;
+	font-size: 25px;
+	font-weight:bolder;
+	
+}
+
+
+
+.item p{
+	font-size:30px;
+	font-style:italic;
+	font-family:Calibri;
+}
+.item a {
+	font-size:30px;
+	font-family:Trebuchet MS;
+	font-style:italic;
+}
+.item a:hover {
+	cursor:pointer;
+}
+#container #leftside {
+	
+	margin-top: -7px;
+	float:left;
+	
+}
+
+#container #leftside .left {
+	display:block;
+	overflow:hidden;
+}
+
+#container #leftside h3 {
+	color:white;
+	background: linear-gradient(to bottom, #497c85 0%, #78a5af 100%);
+	line-height: 50px;
+	border-radius: 10px 10px 0px 0px;
+	font-size: 20px;
+
+}
+
+#container #rightside h3 {
+	color:white;
+	background: linear-gradient(to bottom, #497c85 0%, #78a5af 100%);
+	line-height: 50px;
+	border-radius: 10px 10px 0px 0px;
+	font-size: 20px;
+
+}
+#container #leftside .categoriesarea {
+	margin-bottom: 0px;
+	overflow:hidden;
+}
+
+#container #leftside .categoriesarea ul {
+	margin-left: -40px;
+	margin-top: -14px;
+	width: 130%;
+	
+}
+#container #leftside .categoriesarea ul li{
+	list-style-type: none;
+	margin-bottom: 1px;
+	background-color: #DAD0CF;
+}
+
+#container #leftside .categoriesarea ul li a {
+	text-decoration: none;
+	display:block;
+	font-size: 17px;
+	line-height: 25px;
+	background: url(images/checked.png) no-repeat;
+	background-position: 2% center;
+	padding: 5px 0px 5px 28px;
+	color:#4C4B4E;
+}
+
+#container #leftside .categoriesarea .even {
+	background-color: #ECE6E6;
+}
+
+#container #leftside .categoriesarea ul li a:hover {
+  cursor: pointer;
+  color: white;
+  background-color:#33ccff;
+}
+
+#container #rightside
+{
+	
+	margin-top:-9px;
+	
+}
+
+ #why a:hover {
+	cursor:pointer;
+}
+
+
+#mynav .dropdown-menu li {
+	font-size: 17px;
+}
+
+#address {
+	color:white;
+}
+
+#address h3{
+	font-weight:bolder;
+}
+
+#address p {
+	font-size:14px;
+}
+
+#footer-nav a {
+	padding: 8px 10px;
+	font-size:14px;
+}
+
+#footer-nav a:hover {
+	cursor:pointer;
+}
+
+
+#center table {
+	width: 100%;
+	border-bottom: 1.5px solid black;
+}
+
+#center table .firstcell {
+	text-align:left;
+}
+#center table .secondcell {
+	text-align:right;
+	font-size:15px;
+}
+
+#center .product {
+	padding: 15px 15px;
+
+}
+
+#center .product button {
+	width: 100%;
+	font-weight:bold;
+	padding:3px 0px;
+}
+#center .product a {
+	color:black;
+}
+
+#center .product a:hover {
+	text-decoration:none;
+	cursor:pointer;
+}
+
+#center .product:after {
+ content: "";
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    width: 0%;
+    height: 100%;
+     background-color: 	#FFFFFF;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+  	pointer-events:none;
+		
+}
+
+#center .product:hover:after {
+	 width: 100%;
+    background-color: rgba(255,255,255,0);
+    -webkit-transition: all 0.8s ease-out;
+    -moz-transition: all 0.8s ease-out;
+    -ms-transition: all 0.8s ease-out;
+    -o-transition: all 0.8s ease-out;
+    transition: all 0.8s ease-out;
+	cursor:pointer;
+}
+ nav ul li:hover {
+ 	cursor:pointer;
+ }
+
+footer {
+	clear:both;
+	background-color:#ffccff;
+	padding:10px 0px;
+	margin-top:-40px;
+}
+
+.go-top {
+	position: fixed;
+	bottom: 2em;
+	right: 2em;
+	text-decoration: none;
+	color: transparent;
+	background:url(images/goup.png);
+	background-size:100% 100%;
+	font-size: 15px;
+	padding: 1em 1em;
+	display: none;
+	text-decoration: none;
+}
+
+.go-top:hover {
+	color:transparent;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+</style>
+
+
+<script>
+	$(document).ready(function() {
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 200) {
+					$('.go-top').fadeIn(200);
+				} else {
+					$('.go-top').fadeOut(200);
+				}
+			});
+				
+			$('.go-top').click(function(event) {
+				event.preventDefault();
+				
+				$('html, body').animate({scrollTop: 0}, 300);
+			})
+		});
+</script>
+
+<script>
+var modal = document.getElementById('id01');
+var modal2 = document.getElementById('id02');
+var list = [modal,modal2];
+
+window.onclick = function(event) {
+	for (var i=0; i<=list.length;i++){
+    	if (event.target == list[i]) {
+        	list[i].style.display = "none";
+    	}
+    }
+}
+</script>
+
+<script>
+
+var modal = document.getElementById('id01');
+var modal2 = document.getElementById('id02');
+var list = [modal,modal2];
+
+window.onclick = function(event) {
+	for (var i=0; i<=list.length;i++){
+    	if (event.target == list[i]) {
+        	list[i].style.display = "none";
+    	}
+    }
+}
+</script>
