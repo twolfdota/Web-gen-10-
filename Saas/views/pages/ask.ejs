@@ -1,0 +1,54 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+    <style>
+        form {
+            width:60%;
+            margin-left:20%;
+        }
+        textarea {
+            width:100%;
+            min-height:100px;
+        }
+        input {
+            font-size:20px;
+
+        }
+    </style>
+</head>
+<body>
+    <% include ../partials/header %>
+        <form method ="post" action="/ask">
+            <h3>Ask the community a yes/no question</h3>
+            <input type="hidden" id="msgstat" value="<%= message %>">
+            <textarea name="question" id="qinput" maxlength="200"></textarea>
+            <p id="count">Characters left: 200/200</p>
+            <input type="submit" value="Send"/>
+        </form>
+    <% include ../partials/footer %>
+</body>
+<script>
+    $(document).ready(function(){
+        var check = $('#msgstat').val();
+        if (check != "") {
+        $(`<div title='message'>${check}</div>`).dialog({
+            modal:true,
+            buttons: {
+                Ok: function() {
+                    $(this).dialog("close");
+                    }
+                }
+            });
+        }
+    })
+</script>
+
+<script>
+    $('#qinput').bind('input propertychange', function () {
+        var c = $.trim($("#qinput").val()).length;
+        $("#count").html(`Characters left: ${200 - c}/200`);
+
+    });
+</script>
+</html>

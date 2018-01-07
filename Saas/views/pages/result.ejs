@@ -1,0 +1,65 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+    <style>
+        #main-content{
+            width:60%;
+            margin-left:20%;
+        }
+
+        #result {
+            width:100%;
+            border-radius:10px;
+            overflow:hidden;
+            height:40px;
+        }
+        .res {
+            height:100%;
+            float:left;
+            text-align:center;
+            line-height:40px;
+            color:white;
+            font-size:18px;
+        }
+        #ye {
+            background-color:green;
+
+
+        }
+
+        #nope {
+            background-color:red;
+
+        }
+        form button {
+            font-size:20px;
+            padding:5px 10px;
+            background-color:aquamarine;
+            margin-top:30px;
+        }
+    </style>
+</head>
+<body>
+    <% include ../partials/header %>
+    <div id="main-content">
+    <center><h3><%= content %></h3></center>
+    <center><h4><%= votenum %> vote(s)</h4></center>
+    <div id="result">
+        <div class="res" id="ye" style="width: <%= yesvalue %>%">
+            <%= yesvalue %>% <span class="glyphicon glyphicon-thumbs-up"></span>
+        </div>
+        <div class="res" id="nope" style="width: <%= novalue %>%">
+            <%= novalue %>% <span class="glyphicon glyphicon-thumbs-down"></span>
+        </div>
+    </div>
+    <center>
+            <form method="post">
+                <input type="hidden" value="<%= id %>" name="myid">
+                <button type="submit" formaction="/question/">See another question</button>
+            </form>
+    </center>
+    </div>
+    <% include ../partials/footer %>
+</body>
+</html>

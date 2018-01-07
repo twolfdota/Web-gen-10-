@@ -1,0 +1,57 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+    <style>
+        form {
+            width:60%;
+            margin-left:20%;
+        }
+        button {
+
+            font-size:20px;
+            border:none;
+            border-radius:5px;
+            padding:5px 10px;
+            margin:10px 10px;
+            text-align:center;
+            color:white;
+            background-color:blue;
+        }
+        button a {
+            text-decoration:none;
+            color:white;
+        }
+        button a:hover {
+            text-decoration:none;
+            color:white;
+        }
+        .ye {
+            margin-left:25%;
+            background-color:green;
+        }
+        .nope {
+            margin-right:25%;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <% include ../partials/header %>
+        <div>
+            <form action="/answer" method="post">
+            <center><h3><%= content %></h3></center>
+            <input type="hidden" value="<%= id %>" name="myid">
+            <center>
+                <button type="submit" class="ye" formaction="/question/yes"><span class="glyphicon glyphicon-thumbs-up"></span> Yes</button>
+                <button type="submit" class="nope" formaction="/question/no"><span class="glyphicon glyphicon-thumbs-down"></span> No</button>
+            </center>
+            <center>
+                <button type="submit" formaction="/question/">See another question</button>
+                <button><a href="/ask">Ask a question</a></button>
+            </center>
+            </form>
+        </div>
+    <% include ../partials/footer %>
+</body>
+</html>

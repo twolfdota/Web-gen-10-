@@ -6,10 +6,12 @@ const writeFileSync = (fileName, data) => {
 
 const readFileSync = (fileName) => {
     let readData = fs.readFileSync(fileName, 'utf-8');
-    console.log(readData);
+    return readData;
 }
+
 
 module.exports = {
     writeFile : writeFileSync,
-    readFile : readFileSync
+    readFile : readFileSync,
+
 }
