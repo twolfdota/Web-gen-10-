@@ -1,8 +1,9 @@
 const express = require('express');
 const Router = express.Router();
 const fs = require('fs');
-const fileCtrl = require('./fileController');
+const fileCtrl = require('../Controller/fileController');
 const filePath = "./questions.json";
+const askCtrl = require('../Controller/questionController');
 
 Router.get('/', (req, res) => {
     res.render("pages/ask", {message: ""});
@@ -14,19 +15,13 @@ Router.get('/sub', (req, res)=>{
 
 Router.post('/', (req, res) => {
     console.log(req.body.question);
-    var questlist = [];
-    var quest = {
-        id:0,
-        content: req.body.question,
-        yes:0,
-        no:0
-    };
-    if (fs.existsSync(filePath)){
-        questlist = JSON.parse(fileCtrl.readFile(filePath));
-        quest.id = questlist.length;
-    }
-    questlist.push(quest);
-    fileCtrl.writeFile(filePath, JSON.stringify(questlist));
+    askCtrl.addQuestion(req.body.question, (err, id)=>{
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(id);
+        }
+    });
     
  
     res.render("pages/ask", {message : "Your question have been sent!"});

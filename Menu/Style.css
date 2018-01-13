@@ -10,6 +10,7 @@
 	height:25px;
 	width:100px;
 	padding-top:5px;
+	position:relative;
 }
 
 .menu span:hover {
@@ -28,8 +29,37 @@
 	padding-top:5px;
 	text-align:center;
 	margin:3px 0px;	
+
 }
 
 .menu_vertical {
 	background:transparent;
 }
+
+.submenu {
+	display:none;
+	position:absolute;
+}
+
+
+span:hover > .submenu {
+	display:block;
+	
+	top:100%;
+	left:0;
+}
+
+
+
+.menu_vertical span:hover >.submenu {
+	display:block;	
+	top:0;
+	left:100%;
+}
+
+.submenu span:hover > .submenu {
+	display:block;
+	top:0;
+	left:100%;
+}
+

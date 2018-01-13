@@ -1,11 +1,12 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <head>
+    <title>Ask new questions</title>
     <% include ../partials/head %>
     <style>
         form {
-            width:60%;
-            margin-left:20%;
+            width:80%;
+            margin-left:10%;
         }
         textarea {
             width:100%;
@@ -15,16 +16,28 @@
             font-size:20px;
 
         }
+
+        .ui-dialog.success-dialog .ui-dialog-content {
+            background:url(/images/done.png) no-repeat;
+            background-size:30px 30px;
+            background-position:5% 20%;
+            padding-left:22%;
+        }
+ 
+            .ui-dialog {
+                margin-left:20%;
+            }
+       
     </style>
 </head>
 <body>
     <% include ../partials/header %>
         <form method ="post" action="/ask">
             <h3>Ask the community a yes/no question</h3>
-            <input type="hidden" id="msgstat" value="<%= message %>">
+            <input type="hidden" value="<%= message %>" id="msgstat">
             <textarea name="question" id="qinput" maxlength="200"></textarea>
             <p id="count">Characters left: 200/200</p>
-            <input type="submit" value="Send"/>
+            <input class="btn-primary" type="submit" value="Send"/>
         </form>
     <% include ../partials/footer %>
 </body>
@@ -34,6 +47,9 @@
         if (check != "") {
         $(`<div title='message'>${check}</div>`).dialog({
             modal:true,
+            width: "30%",
+            dialogClass: 'success-dialog',
+            draggable:false,
             buttons: {
                 Ok: function() {
                     $(this).dialog("close");

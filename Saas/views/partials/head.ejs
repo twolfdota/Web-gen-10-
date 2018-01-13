@@ -8,3 +8,21 @@
 
 <link rel="stylesheet" href="/CVStyle.css" type="text/css"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script>
+        $(document).ready(function () {
+            var urlpart = window.location.href;
+
+            if (urlpart.includes("/ask")) {
+                document.getElementById("cat1").style.background = 'black';
+            }
+            else if (urlpart.includes("/question")) {
+                document.getElementById("cat2").style.background = 'black';
+            }
+            else if (urlpart.includes("/about")) {
+                document.getElementById("cat3").style.background = 'black';
+            }
+
+        });
+    </script>

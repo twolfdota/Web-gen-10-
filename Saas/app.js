@@ -1,13 +1,22 @@
 const express = require('express');
 const app = express();
 const config = require('./config.json');
-const askRouter = require('./askRouter');
-const questionRouter = require('./questionRouter');
+const askRouter = require('./router/askRouter');
+const questionRouter = require('./router/questionRouter');
 const bodyParser = require('body-parser');
-
+const mongoose = require('mongoose');
 app.use(bodyParser.urlencoded({ extended: true }))
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/Contents'));
+mongoose.connect("mongodb://localhost:27017/my1stDB", (err)=>{
+    if(err){
+        console.log(err);
+    } else {
+        console.log("Database connect success!");
+    }
+})
+askRouter.use(express.static(__dirname + '/Contents'));
+questionRouter.use(express.static(__dirname + '/Contents'));
 app.get('/', (req, res)=>{
     res.render('pages/index');
 })

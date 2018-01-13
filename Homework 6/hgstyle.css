@@ -1,0 +1,134 @@
+header div div div{
+	padding:5px 0px;
+}
+
+header a span {
+	font-size:20px;
+	margin-top:10px;
+}
+
+header a span:hover {
+	cursor:pointer;
+}
+#main {
+	background-color:#DFDFDF;
+	margin:0;
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+    border-radius:0px;
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+	border-radius:0px;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+
+}
+
+.input-group ul {
+	list-style-type:none;
+}
+
+.input-group ul li {
+	border:0.25px solid grey;
+	display:inline-block;
+	margin:0;
+	padding:4px 6px;
+	font-size:15px;
+	font-color:black;
+	float:left;
+	opacity:0.6;
+}
+
+.input-group ul li span {
+	font-size:10px;
+	padding:5px 100px 5px 10px;
+}
+.icon-top-right {
+	color:black;
+}
+#footer {
+	position:fixed;
+	bottom:0;
+	width:100%;
+	padding:15px 20px;
+}
+
+#footer .icon-top-right {
+	color:white;
+	background-color:#00A0C6;
+	font-size:20px;
+	border-radius:40px;
+	padding:5px 7px;
+}
+
+.card {
+	margin-top:20px;
+}
+
+
+.card .card-img-top{
+	width:100%;
+	height:auto;
+}
+
+.card .img-circle {
+	float:left;
+	width:15%;
+	height:auto;
+	margin:7% 5%;
+}
+
+.card-block {
+	background-color:white;
+	margin-top:-10px;
+	padding:10px 5px 5px 5px;
+}
+
+.card-block p {
+	clear:both;
+}
+
+#bubble {
+	margin-left:-30px;
+	background-color:white;
+	border-radius:30px;
+	width:80%;
+	padding: 10px 10px;
+}
+
+#bubble img {
+	width:20%;
+	height:auto;
+}
+
+#triangle_down {
+	margin-left:30%;
+    width: 0;
+    height: 0;
+    border-top: 26px solid white;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+        -ms-transform: skewX(40deg); /* IE 9 */
+    -webkit-transform: skewX(40deg); /* Safari */
+    transform: skewX(40deg)
+}
+
+.go-top {
+	position: fixed;
+	bottom: 1em;
+	right: 7em;
+	display:none;
+}
+.navbar-toggle .icon-bar {
+    background-color: black;
+}
+
+.navbar-header .navbar-toggle {
+	background-color:grey;
+}

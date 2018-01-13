@@ -1,6 +1,7 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <head>
+    <title>Questions</title>
     <% include ../partials/head %>
     <style>
         #main-content{
@@ -33,10 +34,8 @@
 
         }
         form button {
+            margin-top:15px;
             font-size:20px;
-            padding:5px 10px;
-            background-color:aquamarine;
-            margin-top:30px;
         }
     </style>
 </head>
@@ -56,7 +55,7 @@
     <center>
             <form method="post">
                 <input type="hidden" value="<%= id %>" name="myid">
-                <button type="submit" formaction="/question/">See another question</button>
+                <button class="btn-default" formaction="/question/" name="answer" value="">See another question</button>
             </form>
     </center>
     </div>
