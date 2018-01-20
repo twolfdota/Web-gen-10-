@@ -1,0 +1,75 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <p>hello world</p>
+
+<form action="/" method="post">
+    name
+    <input type="text" name="name"> image
+    <input type="text" name="image">
+    <input type="submit" value="send">
+</form>
+
+search
+<input id="search" type="text" name="autocomplete">
+
+</body>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#search').autocomplete({
+            source: function (req, res) {
+                $.ajax({
+                    url: "/autocomplete/" + req.term,
+                    dataType: "json",
+                    type: "GET",
+                    data: {
+                        term: req.term
+                    },
+                    success: function (data) {
+                        res($.map(data, function (item) {
+                            return {
+                                label: item.name,
+                                ava: item.img
+                            };
+                        }));
+                    },
+                    error: function (xhr) {
+                        alert(xhr.status + ' : ' + xhr.statusText);
+                    }
+                });
+            },
+            select: function (event, ui) {
+               
+            }
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+            var inner_html = `<a href="/autocomplete/${item.label}"><img src="${item.ava}" width="30" height="30">${item.label}</a>`;
+            return $("<li></li>")
+                    .data("ui-autocomplete-item", item)
+                    .append(inner_html)
+                    .appendTo(ul);
+        };
+    })
+</script>
+<style>
+    ul.ui-autocomplete a{
+        display:block;
+        width:100%;
+    }
+</style>
+</html>
+
+

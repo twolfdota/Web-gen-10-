@@ -1,0 +1,4 @@
+{
+    "port": 9696,
+    "dbUrl": "mongodb://localhost:27017/ACDB"
+}
